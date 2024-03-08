@@ -15,13 +15,10 @@ public class DataN {
     private int ano;
 
     public DataN(int dia, int mes, int ano) {
-
         this.ajustarData(dia, mes, ano);
-
     }
-    
-    public DataN(){
-        
+
+    public DataN() {
     }
 
     public void ajustarData(int dia, int mes, int ano) {
@@ -59,6 +56,11 @@ public class DataN {
     }
 
     public String dataFormatada() {
+
+        if (this.dia < 10 && this.mes < 10) {
+            return "0" + this.dia + "/" + "0"+ this.mes + "/" + this.ano;
+        }
+
         return this.dia + "/" + this.mes + "/" + this.ano;
     }
 }
