@@ -33,7 +33,6 @@ public class DataTest {
      }
      
      @Test
-     
      public void criarDataDiaMenor10MesMaior10(){
          Data d = new Data(6,11,2024);
          String dataEsperada = "06/11/2024";
@@ -52,7 +51,6 @@ public class DataTest {
      }
      
      @Test
-     
      public void criarDataMesDiaMaior10(){
          Data d = new Data(14,12,2024);
          String dataEsperada = "14/12/2024";
@@ -61,6 +59,85 @@ public class DataTest {
          assertEquals(dataEsperada, dataRetornada);
      }
  
+     @Test
+     public void anoDeSeculoBissexto(){
+         Data data = new Data(1, 2, 2000);
+         boolean resultadoEsperado = true;
+         
+         boolean resultadoRetornado = data.eBissexto();
+         
+         assertEquals(resultadoEsperado, resultadoRetornado);
+     }
+     
+     @Test
+     public void anoDeSeculoNaoBissexto(){
+         Data data = new Data(1, 2, 1900);
+         boolean resultadoEsperado = false;
+         
+         boolean resultadoRetornado = data.eBissexto();
+         
+         assertEquals(resultadoEsperado, resultadoRetornado);
+     }
+     
+     @Test
+     public void anoNaoSecularBissexto(){
+         Data data = new Data(1, 2, 2024);
+         boolean resultadoEsperado = true;
+         
+         boolean resultadoRetornado = data.eBissexto();
+         
+         assertEquals(resultadoEsperado, resultadoRetornado);
+     }
+     
+     @Test
+     public void anoNaoSecularNaoBissexto(){
+         Data data = new Data(1, 2, 2023);
+         boolean resultadoEsperado = false;
+         
+         boolean resultadoRetornado = data.eBissexto();
+         
+         assertEquals(resultadoEsperado, resultadoRetornado);
+     }
+     
+     @Test
+     public void fevereiroDiaMaior29(){
+         
+         Data d = new Data(30,2,2024);
+         boolean esperado = false;
+         boolean inserido = d.dataValida();
+         
+         assertEquals(esperado,inserido);
+     }
+     
+     @Test
+     public void fevereiroDia29Bissexto(){
+         
+         Data d = new Data(29,2,2024);
+         boolean esperado = true;
+         boolean inserido = d.dataValida();
+         
+         assertEquals(esperado,inserido);
+     }
+     
+     @Test
+     public void fevereiroDia29NaoBissexto(){
+         
+         Data d = new Data(29,2,2023);
+         boolean esperado = false;
+         boolean inserido = d.dataValida();
+         
+         assertEquals(esperado,inserido);
+     }
+     
+     @Test
+     public void criarDataAnoNegativo(){
+         
+         Data dataNaoEsperada = new Data(29,2,2024);
+         Data dataCriada = new Data(29,2,-2024);
+                 
+         
+         assertNotEquals(dataNaoEsperada,dataCriada);
+     }
 }
      
 

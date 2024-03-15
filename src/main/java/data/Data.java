@@ -55,10 +55,10 @@ public class Data {
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;
-        if (dataValida()) {
-            this.dia = dia;
-            this.mes = mes;
-            this.ano = ano;
+        if (!dataValida()) {
+            this.dia = 0;
+            this.mes = 0;
+            this.ano = 0;
         }
     }
 
