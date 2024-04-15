@@ -38,6 +38,8 @@ public class PilotoTest {
          int proxCodigoEsperado = 2;
          
          assertEquals(proxCodigoEsperado, Piloto.getProxCodd());
+         
+         
 
      }
 }
