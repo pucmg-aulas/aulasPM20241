@@ -21,7 +21,6 @@ public class IMJFS {
         girpf.adicionar(sv);
         girpf.adicionar(cc);
         //girpf.adicionar(sa);
-               
         
         
         System.out.println("Total de Impostos: " + girpf.getTotalImpostos());
