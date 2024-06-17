@@ -10,6 +10,6 @@ package prova02;
  */
 public interface IVeiculo {
     
-    //void frear();
+    void frear();
     
 }
